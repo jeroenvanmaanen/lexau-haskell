@@ -1,0 +1,82 @@
+name:            lexau-totem
+version:         0.6
+build-type:      Simple
+cabal-version:   >= 1.6
+license:         LGPL
+author:          Jeroen van Maanen
+synopsis:        LExAu - Learning Expectations Autonomously
+description:     Library to learn Partially Observable Markov Decision Processes (POMDPs) from interaction without supervision.
+homepage:        http://lexau.org/
+category:        A.I.
+
+executable lexau
+  hs-source-dirs:  src
+  main-is:         Main.hs
+  other-modules:   
+                   Data.PrettyPrint.Swallow,
+                   LExAu.Alphabet.Directed,
+                   LExAu.Alphabet.Standard,
+                   LExAu.API.Alphabet,
+                   LExAu.API.Database,
+                   LExAu.API.DescriptionLength,
+                   LExAu.API.Distribution,
+                   LExAu.API.Encounter,
+                   LExAu.API.HistoryTree,
+                   LExAu.API.Indexed,
+                   LExAu.API.Interaction,
+                   LExAu.API.Markov,
+                   LExAu.API.MDL,
+                   LExAu.API.Model,
+                   LExAu.API.MongoDB,
+                   LExAu.API.Named,
+                   LExAu.API.ReaderContext,
+                   LExAu.Distribution.Histogram,
+                   LExAu.Distribution.MDL,
+                   LExAu.IO.Example,
+                   LExAu.IO.ReadFile,
+                   LExAu.IO.ReadWordsFile,
+                   LExAu.IO.Words,
+                   LExAu.Model.HistoryTree,
+                   LExAu.Model.HistoryTreeDBImpl.Habits,
+                   LExAu.Model.HistoryTreeDBImpl.Observed,
+                   LExAu.Model.HistoryTreeImpl.Covered,
+                   LExAu.Model.HistoryTreeImpl.Expected,
+                   LExAu.Model.HistoryTreeImpl.ExpectedData,
+                   LExAu.Model.HistoryTreeImpl.HTData,
+                   LExAu.Model.HistoryTreeImpl.Observed,
+                   LExAu.Model.HistoryTreeImpl.Process,
+                   LExAu.Model.HistoryTreeImpl.Solid,
+                   LExAu.Model.HistoryTreeImpl.Utilities,
+                   LExAu.Model.Markov,
+                   LExAu.Model.Trivial,
+                   LExAu.Pipeline.Concurrent,
+                   LExAu.Pipeline.MongoDB,
+                   LExAu.Utilities.Data,
+                   LExAu.Utilities.DescriptionLength,
+                   LExAu.Utilities.DetailedException,
+                   LExAu.Utilities.HttpController,
+                   LExAu.Utilities.Logging,
+                   LExAu.Utilities.MVar,
+                   LExAu.Utilities.MongoDB,
+                   LExAu.Utilities.ThreadManager
+  ghc-options:     -threaded -rtsopts
+
+  build-depends:
+    array        >= 0.3,
+    base         == 4.*,
+    Cabal        >= 1.8,
+    containers   >= 0.3,
+    mtl          == 2.*,
+    random       == 1.*,
+    old-locale   == 1.*,
+    time         == 1.*,
+    unix,
+    directory,
+    filepath,
+    pretty,
+    happstack-server,
+    -- json2,
+    mongoDB      >= 2.3,
+    bson,
+    transformers
+    -- compact-string-fix

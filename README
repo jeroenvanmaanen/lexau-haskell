@@ -1,0 +1,9 @@
+To build LExAu
+
+* Make sure you have installed the GHC Haskell compiler
+* Install version 2 of the alex parser generator:
+  $ cabal install 'alex<3'
+* copy file 'config.mk.example' to 'config.mk' and adapt it to your system if necessary
+* run 'make'
+
+To run the LExAu tests run the command 'lexau' in directory 'dist/build/lexau'.
